@@ -1,0 +1,30 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="btn1_4style">
+        <item name="android:background">@color/orange_bnt</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_marginRight">@dimen/btn_left_right_margin</item>
+        <item name="android:layout_marginLeft">@dimen/btn_left_right_margin</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textSize">@dimen/abc_text_size_medium_material</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/btn_top_margin</item>
+    </style>
+
+    <style name="btn5style">
+        <item name="android:background">@color/red_bnt</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_marginRight">@dimen/btn_left_right_margin</item>
+        <item name="android:layout_marginLeft">@dimen/btn_left_right_margin</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textSize">@dimen/abc_text_size_medium_material</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/btn_top_margin</item>
+    </style>
+
+</resources>
