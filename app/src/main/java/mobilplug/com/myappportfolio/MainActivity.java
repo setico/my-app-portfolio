@@ -8,37 +8,55 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
 
-public class MainActivity extends ActionBarActivity implements View.OnClickListener{
 
-    private Button btn_1;
-    private Button btn_2;
-    private Button btn_3;
-    private Button btn_4;
-    private Button btn_5;
-    private View.OnClickListener listener;
+public class MainActivity extends ActionBarActivity{
+
+    @InjectView(R.id.btn_1)
+    protected Button btn_1;
+    @InjectView(R.id.btn_2)
+    protected Button btn_2;
+    @InjectView(R.id.btn_3)
+    protected Button btn_3;
+    @InjectView(R.id.btn_4)
+    protected Button btn_4;
+    @InjectView(R.id.btn_5)
+    protected Button btn_5;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.inject(this);
+    }
 
-        btn_1 = (Button)findViewById(R.id.btn_1);
-        btn_1.setOnClickListener(this);
-        btn_2 = (Button)findViewById(R.id.btn_2);
-        btn_2.setOnClickListener(this);
-        btn_3 = (Button)findViewById(R.id.btn_3);
-        btn_3.setOnClickListener(this);
-        btn_4 = (Button)findViewById(R.id.btn_4);
-        btn_4.setOnClickListener(this);
-        btn_5 = (Button)findViewById(R.id.btn_5);
-        btn_5.setOnClickListener(this);
-
+    @OnClick(R.id.btn_1)
+    public void btn_1_Onclick(){
+        showToast(btn_1.getText().toString());
+    }
+    @OnClick(R.id.btn_2)
+    public void btn_2_Onclick(){
+        showToast(btn_2.getText().toString());
+    }
+    @OnClick(R.id.btn_3)
+    public void btn_3_Onclick(){
+        showToast(btn_3.getText().toString());
+    }
+    @OnClick(R.id.btn_4)
+    public void btn_4_Onclick(){
+        showToast(btn_4.getText().toString());
+    }
+    @OnClick(R.id.btn_5)
+    public void btn_5_Onclick(){
+        showToast(btn_5.getText().toString());
     }
 
     void showToast(String msg){
-        Toast.makeText(this,getString(R.string.toast_msg)+" "+msg,Toast.LENGTH_SHORT).show();
+        Toast.makeText(this,getString(R.string.toast_msg)+" "+msg, Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -63,24 +81,4 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()){
-            case R.id.btn_1:
-                showToast(btn_1.getText().toString());
-                break;
-            case R.id.btn_2:
-                showToast(btn_2.getText().toString());
-                break;
-            case R.id.btn_3:
-                showToast(btn_3.getText().toString());
-                break;
-            case R.id.btn_4:
-                showToast(btn_4.getText().toString());
-                break;
-            case R.id.btn_5:
-                showToast(btn_5.getText().toString());
-                break;
-        }
-    }
 }
